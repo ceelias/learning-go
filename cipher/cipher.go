@@ -52,12 +52,13 @@ func main() {
 			if( character == strings.ToUpper(character) ) {
 				cipherString += strings.ToUpper( cipher[strings.ToLower(character)] )
 			} else{
+				if( cipher[character] == "" ) {
+					cipherString += character
+				}
 				cipherString += cipher[character]
 			}
 			
-			if( cipher[character] == "" ) {
-				cipherString += character
-			}
+
 		}
 
 		fmt.Println( "Encrypted Message: " )
